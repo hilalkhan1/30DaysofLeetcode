@@ -4,7 +4,7 @@ class Solution:
         if numRows == 1:
             return [x[0]]
         if numRows == 2:
-            return [x[0:2]]
+            return x[0:2]
         if numRows == 3:
             return x
 
