@@ -8,7 +8,6 @@ class Solution:
                 if s[j] in sub:
                     break
                 else:
-                    print(i)
                     sub += s[j]
             if len(sub) > len(string):
                 string = sub
