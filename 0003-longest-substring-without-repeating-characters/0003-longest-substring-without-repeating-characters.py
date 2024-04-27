@@ -1,17 +1,25 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        string = ""
         n = len(s)
-        for i in range(n):
-            sub = ""
-            for j in range(i, n):
-                if s[j] in sub:
-                    break
-                else:
-                    sub += s[j]
-            if len(sub) > len(string):
-                string = sub
-        return len(string)
+        if n == 0:
+            return 0
+
+        dic = dict()
+        l, r = 0, 0
+        length = 0
+
+        while (r < n):
+            if s[r] in dic.keys():
+                l = max(dic[s[r]] + 1, l)
+            
+            dic[s[r]] = r
+
+            length = max(length, r - l + 1)
+
+            r += 1
+
+        return length
+
 
 
 
