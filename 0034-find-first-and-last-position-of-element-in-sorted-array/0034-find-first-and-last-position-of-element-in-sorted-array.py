@@ -9,7 +9,7 @@ class Solution:
             if nums[i] == target and len(output)<2:
                 output.append(i)
                 continue
-            if nums[i] == target and len(output) > 2:
+            if nums[i] == target and len(output) >= 2:
                 output.pop()
                 output.append(i)
         if len(output) == 0:
